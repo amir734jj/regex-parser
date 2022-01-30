@@ -155,12 +155,12 @@ namespace Core
 
         public override IToken VisitPositive_set(RegexParser.Positive_setContext context)
         {
-            return new PositiveToken(new Append(context.set_item().Select(Visit).ToArray()));
+            return new PositiveToken(new SetItems(context.set_item().Select(Visit).ToArray()));
         }
 
         public override IToken VisitNegative_set(RegexParser.Negative_setContext context)
         {
-            return new NegativeToken(new Append(context.set_item().Select(Visit).ToArray()));
+            return new NegativeToken(new SetItems(context.set_item().Select(Visit).ToArray()));
         }
 
         public override IToken VisitSet_item(RegexParser.Set_itemContext context)
