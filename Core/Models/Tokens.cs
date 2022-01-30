@@ -1,16 +1,20 @@
+using System.Linq;
 using Core.Interfaces;
 
 namespace Core.Models
 {
     public class Append : IToken
     {
-        public IToken Left { get; }
-        public IToken Right { get; }
-
-        public Append(IToken left, IToken right)
+        public IToken[] Tokens { get; }
+        
+        public Append(IToken[] tokens)
         {
-            Left = left;
-            Right = right;
+            Tokens = tokens;
+        }
+
+        public override string ToString()
+        {
+            return string.Join("", Tokens.Select(x => x.ToString()));
         }
     }
 }

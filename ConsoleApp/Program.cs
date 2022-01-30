@@ -18,7 +18,7 @@ namespace ConsoleApp
                 .BuildServiceProvider();
 
             var simpleRegexParser = serviceProvider.GetRequiredService<SimpleRegexParser>();
-            var regex = "([a-zA-Z])+";
+            var regex = "([\\wa-zA-Z])+";
             var result = simpleRegexParser.Parse(regex);
             
             Console.WriteLine(result);

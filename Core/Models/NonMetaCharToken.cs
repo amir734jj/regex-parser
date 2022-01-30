@@ -13,7 +13,7 @@ namespace Core.Models
 
         public override string ToString()
         {
-            return Val.ToString();
+            return Val;
         }
     }
 }

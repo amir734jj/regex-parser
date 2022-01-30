@@ -29,10 +29,9 @@ options {
                | MetaCharToken;
            set : positive_set
                | negative_set;
-  positive_set : OpenBracketToken set_items CloseBracketToken;
-  negative_set : OpenBracketToken NegCharToken set_items CloseBracketToken;
-     set_items : range
-               | NonMetaCharToken
-               | MetaCharToken;
+  positive_set : OpenBracketToken set_item+ CloseBracketToken;
+  negative_set : OpenBracketToken NegCharToken set_item+ CloseBracketToken;
+     set_item  : range
+               | char;
          range : NonMetaCharToken RangeToken char
                | MetaCharToken RangeToken char;
