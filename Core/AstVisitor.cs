@@ -6,21 +6,21 @@ namespace Core
 {
     public abstract class AstVisitor<T>
     {
-        public abstract T Visit(AnyToken anyToken);
-        public abstract T Visit(ConcatenationToken concatenationToken);
-        public abstract T Visit(EosToken eosToken);
-        public abstract T Visit(GroupToken groupToken);
-        public abstract T Visit(MetaCharToken metaCharToken);
-        public abstract T Visit(NegativeToken negativeToken);
-        public abstract T Visit(NonMetaCharToken nonMetaCharToken);
-        public abstract T Visit(PlusToken plusToken);
-        public abstract T Visit(PositiveToken positiveToken);
-        public abstract T Visit(RangeToken rangeToken);
-        public abstract T Visit(SetItems setItems);
-        public abstract T Visit(StarToken starToken);
-        public abstract T Visit(UnionToken unionToken);
+        protected abstract T Visit(AnyToken anyToken);
+        protected abstract T Visit(ConcatenationToken concatenationToken);
+        protected abstract T Visit(EosToken eosToken);
+        protected abstract T Visit(GroupToken groupToken);
+        protected abstract T Visit(MetaCharToken metaCharToken);
+        protected abstract T Visit(NegativeToken negativeToken);
+        protected abstract T Visit(NonMetaCharToken nonMetaCharToken);
+        protected abstract T Visit(PlusToken plusToken);
+        protected abstract T Visit(PositiveToken positiveToken);
+        protected abstract T Visit(RangeToken rangeToken);
+        protected abstract T Visit(SetItems setItems);
+        protected abstract T Visit(StarToken starToken);
+        protected abstract T Visit(UnionToken unionToken);
 
-        public T Visit(IToken token)
+        protected T Visit(IToken token)
         {
             return token switch
             {
